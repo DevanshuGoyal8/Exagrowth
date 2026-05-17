@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+sanity/node_modules/
+
+# Next.js
+.next/
+out/
+
+# Cloudflare
+.vercel/
+.wrangler/
+
+# Environment — NEVER commit these
+.env
+.env.local
+.env.*.local
+
+# Production build
+build/
+dist/
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
