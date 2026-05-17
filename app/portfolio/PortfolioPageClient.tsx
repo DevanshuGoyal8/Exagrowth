@@ -16,6 +16,8 @@ interface PortfolioItem {
   industry: string
   description: string
   tech: string[]
+  logoInitials: string
+  logoColors: [string, string] // gradient from → to
 }
 
 const portfolioItems: PortfolioItem[] = [
@@ -29,6 +31,8 @@ const portfolioItems: PortfolioItem[] = [
     description:
       'All-in-one salon management platform with booking, staff scheduling, and integrated payments. Built for the Saudi market with full Arabic/RTL support.',
     tech: ['React', 'Node.js', 'PostgreSQL', 'RTL/Arabic'],
+    logoInitials: 'LH',
+    logoColors: ['#7C3AED', '#A855F7'],
   },
   {
     id: 'daaem',
@@ -40,6 +44,8 @@ const portfolioItems: PortfolioItem[] = [
     description:
       'Retail merchandising solution with real-time analytics dashboard, territory management, and mobile field-agent app.',
     tech: ['React', 'Laravel', 'MySQL', 'Mobile'],
+    logoInitials: 'DS',
+    logoColors: ['#059669', '#10B981'],
   },
   {
     id: 'kubera',
@@ -51,6 +57,8 @@ const portfolioItems: PortfolioItem[] = [
     description:
       'Expat mortgage advisory platform helping internationals navigate Dutch home ownership. Clean, trust-building design with multi-language support.',
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+    logoInitials: 'KF',
+    logoColors: ['#D97706', '#F59E0B'],
   },
   {
     id: 'growth-strategy',
@@ -62,6 +70,8 @@ const portfolioItems: PortfolioItem[] = [
     description:
       'Strategy consulting platform with 500+ planning frameworks, digital assessments, and client-facing portals for Canadian businesses.',
     tech: ['WordPress', 'Custom PHP', 'MySQL'],
+    logoInitials: 'GS',
+    logoColors: ['#2563EB', '#3B82F6'],
   },
   {
     id: 'magicspells',
@@ -73,6 +83,8 @@ const portfolioItems: PortfolioItem[] = [
     description:
       'First haptic-feedback vocabulary app for dyslexic learners. Combines touch, sight, and sound for multisensory literacy development.',
     tech: ['React Native', 'Expo', 'Haptic APIs'],
+    logoInitials: 'MS',
+    logoColors: ['#E11D48', '#F43F5E'],
   },
   {
     id: 'dfs',
@@ -84,6 +96,8 @@ const portfolioItems: PortfolioItem[] = [
     description:
       'LTL/FTL freight, ocean shipping, rail logistics, and warehousing across North America. 24/7 tracking and competitive pricing.',
     tech: ['WordPress', 'Custom Integrations'],
+    logoInitials: 'DF',
+    logoColors: ['#EA580C', '#F97316'],
   },
   {
     id: 'gtb',
@@ -95,10 +109,31 @@ const portfolioItems: PortfolioItem[] = [
     description:
       'B2B supplier of low-voltage electrical, CCTV, networking products. Custom order portal with product catalog.',
     tech: ['WordPress', 'WooCommerce'],
+    logoInitials: 'GT',
+    logoColors: ['#0891B2', '#06B6D4'],
   },
 ]
 
 const filterOptions = ['All', 'Saudi Arabia', 'Canada', 'Netherlands', 'USA']
+
+// ── Logo chip ─────────────────────────────────────────────────────────────────
+
+function LogoChip({ initials, colors }: { initials: string; colors: [string, string] }) {
+  return (
+    <div
+      className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 shadow-lg"
+      style={{
+        background: `linear-gradient(135deg, ${colors[0]}, ${colors[1]})`,
+        boxShadow: `0 4px 20px ${colors[0]}40`,
+      }}
+      aria-hidden="true"
+    >
+      <span className="text-white font-bold text-base tracking-tight select-none">
+        {initials}
+      </span>
+    </div>
+  )
+}
 
 // ── Animation variants ────────────────────────────────────────────────────────
 
@@ -185,29 +220,33 @@ export function PortfolioPageClient() {
                 className="glass gradient-border rounded-[var(--radius-xl)] p-8 flex flex-col gap-5 group relative overflow-hidden"
                 style={{ willChange: 'transform' }}
               >
-                {/* Hover glow */}
+                {/* Hover glow — tinted to logo color */}
                 <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-[var(--radius-xl)]"
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-[var(--radius-xl)]"
                   style={{
-                    background:
-                      'radial-gradient(ellipse at top left, rgba(37,99,235,0.1) 0%, transparent 70%)',
+                    background: `radial-gradient(ellipse at top left, ${item.logoColors[0]}14 0%, transparent 65%)`,
                   }}
                   aria-hidden="true"
                 />
 
                 <div className="relative flex flex-col gap-4 flex-1">
-                  {/* Header */}
-                  <div className="flex items-start justify-between gap-3">
-                    <h2 className="text-xl font-bold text-[var(--color-text-primary)] leading-tight">
-                      {item.name}
-                    </h2>
-                    <span
-                      className="flex items-center gap-1.5 text-xs text-[var(--color-text-muted)] shrink-0 mt-0.5"
-                      aria-label={`Country: ${item.country}`}
-                    >
-                      <span aria-hidden="true">{item.flag}</span>
-                      {item.country}
-                    </span>
+                  {/* Header: logo chip + name + country */}
+                  <div className="flex items-start gap-4">
+                    <LogoChip initials={item.logoInitials} colors={item.logoColors} />
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-2">
+                        <h2 className="text-xl font-bold text-[var(--color-text-primary)] leading-tight">
+                          {item.name}
+                        </h2>
+                      </div>
+                      <span
+                        className="flex items-center gap-1 text-xs text-[var(--color-text-muted)] mt-1"
+                        aria-label={`Country: ${item.country}`}
+                      >
+                        <span aria-hidden="true">{item.flag}</span>
+                        {item.country}
+                      </span>
+                    </div>
                   </div>
 
                   {/* Industry badge */}
