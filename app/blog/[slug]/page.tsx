@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Badge } from '@/components/ui/Badge'
+import { BlogCover } from '@/components/ui/BlogCover'
 import { formatDate } from '@/lib/utils'
 import { posts } from '@/lib/blogData'
 
@@ -154,16 +154,9 @@ export default async function BlogPostPage({ params }: PageProps) {
             {formatDate(post.date)}
           </time>
 
-          {/* Hero image */}
+          {/* Hero cover */}
           <div className="relative w-full aspect-[16/9] rounded-[var(--radius-lg)] overflow-hidden mb-12 border border-[var(--color-border)]">
-            <Image
-              src="https://placehold.co/1200x630/0f0f0f/1f2937"
-              alt={`Cover image for: ${post.title}`}
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 672px"
-            />
+            <BlogCover tag={post.tag} variant="hero" />
           </div>
 
           {/* Body */}

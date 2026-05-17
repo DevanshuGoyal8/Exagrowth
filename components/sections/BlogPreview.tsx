@@ -2,10 +2,10 @@
 
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { motion, useReducedMotion } from 'framer-motion'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { Badge } from '@/components/ui/Badge'
+import { BlogCover } from '@/components/ui/BlogCover'
 
 const blogPosts = [
   {
@@ -15,7 +15,6 @@ const blogPosts = [
     excerpt:
       'Most businesses have 5–10 workflows that eat hours every week. Here is a practical guide to identifying them and building AI agents that handle them autonomously.',
     date: '2025-04-28',
-    image: 'https://placehold.co/600x340/0f0f0f/1f1f1f',
   },
   {
     slug: 'llm-integration-production',
@@ -24,7 +23,6 @@ const blogPosts = [
     excerpt:
       'Going from a demo to production LLM integration is harder than it looks. Rate limits, prompt injection, latency budgets — here is what to think about before you ship.',
     date: '2025-04-14',
-    image: 'https://placehold.co/600x340/0f0f0f/1f1f1f',
   },
   {
     slug: 'cybersecurity-2025-trends',
@@ -33,7 +31,6 @@ const blogPosts = [
     excerpt:
       'AI-generated phishing, supply chain attacks, and zero-day exploits are evolving fast. Here is the threat landscape and what your team should be doing about it.',
     date: '2025-03-31',
-    image: 'https://placehold.co/600x340/0f0f0f/1f1f1f',
   },
 ]
 
@@ -100,15 +97,9 @@ export function BlogPreview() {
               className="glass gradient-border rounded-[var(--radius-lg)] overflow-hidden flex flex-col group"
               style={{ willChange: 'transform' }}
             >
-              {/* Image */}
-              <div className="relative w-full h-48 overflow-hidden bg-[var(--color-surface-2)]">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
+              {/* Cover */}
+              <div className="relative w-full h-48 overflow-hidden group-hover:brightness-110 transition-all duration-500">
+                <BlogCover tag={post.tag} variant="card" />
               </div>
 
               {/* Content */}
