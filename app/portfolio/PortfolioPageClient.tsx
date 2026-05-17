@@ -67,8 +67,8 @@ const portfolioItems: PortfolioItem[] = [
     id: 'magicspells',
     name: 'MagicSpells',
     url: 'https://magicspells.org',
-    country: 'International',
-    flag: '🌐',
+    country: 'USA',
+    flag: '🇺🇸',
     industry: 'EdTech · Accessibility',
     description:
       'First haptic-feedback vocabulary app for dyslexic learners. Combines touch, sight, and sound for multisensory literacy development.',
@@ -98,7 +98,7 @@ const portfolioItems: PortfolioItem[] = [
   },
 ]
 
-const filterOptions = ['All', 'Saudi Arabia', 'Canada', 'Netherlands', 'International']
+const filterOptions = ['All', 'Saudi Arabia', 'Canada', 'Netherlands', 'USA']
 
 // ── Animation variants ────────────────────────────────────────────────────────
 
@@ -140,7 +140,7 @@ export function PortfolioPageClient() {
               Projects We&apos;re Proud Of
             </h1>
             <p className="text-lg md:text-xl text-[var(--color-text-secondary)] leading-relaxed">
-              From Saudi Arabia to Canada, the Netherlands to the UK — here&apos;s what we&apos;ve shipped.
+              From Saudi Arabia to Canada, the Netherlands to the USA — here&apos;s what we&apos;ve shipped.
             </p>
           </motion.div>
         </div>
