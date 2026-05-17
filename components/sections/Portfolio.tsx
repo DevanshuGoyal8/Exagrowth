@@ -135,8 +135,13 @@ export function Portfolio() {
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {portfolioItems.map((item, i) => (
+        {/* 6-virtual-col grid: each card spans 2 cols → 3 per row.
+            Last card when alone gets col-start-3 to auto-center. */}
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-6">
+          {portfolioItems.map((item, i) => {
+            const isLastAlone =
+              i === portfolioItems.length - 1 && portfolioItems.length % 3 === 1
+            return (
             <motion.div
               key={item.name}
               custom={i}
@@ -144,7 +149,7 @@ export function Portfolio() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="glass gradient-border rounded-[var(--radius-lg)] p-6 flex flex-col gap-4 group relative overflow-hidden"
+              className={`col-span-2 md:col-span-3 lg:col-span-2 glass gradient-border rounded-[var(--radius-lg)] p-6 flex flex-col gap-4 group relative overflow-hidden${isLastAlone ? ' md:col-start-2 lg:col-start-3' : ''}`}
               style={{ willChange: 'transform' }}
             >
               {/* Hover glow tinted to logo color */}
@@ -210,7 +215,8 @@ export function Portfolio() {
                 </svg>
               </a>
             </motion.div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

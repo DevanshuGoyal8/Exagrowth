@@ -207,9 +207,12 @@ export function PortfolioPageClient() {
             ))}
           </div>
 
-          {/* Cards grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filtered.map((item, i) => (
+          {/* Cards grid — 6-virtual-col so last lone card centres itself */}
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
+            {filtered.map((item, i) => {
+              const isLastAlone =
+                i === filtered.length - 1 && filtered.length % 3 === 1
+              return (
               <motion.article
                 key={item.id}
                 custom={i}
@@ -217,7 +220,7 @@ export function PortfolioPageClient() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="glass gradient-border rounded-[var(--radius-xl)] p-8 flex flex-col gap-5 group relative overflow-hidden"
+                className={`col-span-2 md:col-span-3 lg:col-span-2 glass gradient-border rounded-[var(--radius-xl)] p-8 flex flex-col gap-5 group relative overflow-hidden${isLastAlone ? ' md:col-start-2 lg:col-start-3' : ''}`}
                 style={{ willChange: 'transform' }}
               >
                 {/* Hover glow — tinted to logo color */}
@@ -298,7 +301,8 @@ export function PortfolioPageClient() {
                   </svg>
                 </a>
               </motion.article>
-            ))}
+              )
+            })}
           </div>
 
           {filtered.length === 0 && (
