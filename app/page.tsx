@@ -7,6 +7,7 @@ import { Portfolio } from '@/components/sections/Portfolio'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { BlogPreview } from '@/components/sections/BlogPreview'
 import { ContactCTA } from '@/components/sections/ContactCTA'
+import { ClientLogos } from '@/components/sections/ClientLogos'
 
 export const metadata: Metadata = {
   title: 'Exagrowth — AI-First Digital Transformation Agency',
@@ -21,6 +22,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <ClientLogos />
       <AIConsultancy />
       <Services />
       <Products />
