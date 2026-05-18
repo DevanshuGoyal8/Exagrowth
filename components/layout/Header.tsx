@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 
@@ -58,15 +57,37 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0">
-            <Image
-              src="/logo.svg"
-              alt="Exagrowth"
-              width={180}
-              height={36}
-              priority
-              className="h-8 w-auto"
-            />
+          <Link href="/" className="flex items-center gap-2.5 shrink-0 group" aria-label="Exagrowth — home">
+            {/* Icon mark */}
+            <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="shrink-0">
+              <defs>
+                <linearGradient id="hb1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#60A5FA"/>
+                  <stop offset="100%" stopColor="#2563EB"/>
+                </linearGradient>
+                <linearGradient id="hb2" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#93C5FD"/>
+                  <stop offset="100%" stopColor="#3B82F6"/>
+                </linearGradient>
+                <linearGradient id="hb3" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#BFDBFE"/>
+                  <stop offset="100%" stopColor="#60A5FA"/>
+                </linearGradient>
+                <filter id="hglow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="1" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <rect x="5"  y="21" width="6" height="9"  rx="1.5" fill="url(#hb1)"/>
+              <rect x="15" y="14" width="6" height="16" rx="1.5" fill="url(#hb2)"/>
+              <rect x="25" y="7"  width="6" height="23" rx="1.5" fill="url(#hb3)" opacity="0.85"/>
+              <path d="M25 12 L31 6 M26 6 L31 6 L31 11" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" filter="url(#hglow)"/>
+            </svg>
+            {/* Wordmark */}
+            <span className="flex items-baseline gap-0 leading-none select-none">
+              <span className="font-extrabold text-[17px] tracking-tight text-white">Exa</span>
+              <span className="font-light text-[17px] tracking-wide text-slate-400">growth</span>
+            </span>
           </Link>
 
           {/* Desktop nav */}
