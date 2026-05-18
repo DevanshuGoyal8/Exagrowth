@@ -8,24 +8,29 @@ const logos = [
     name: "Da'aem",
     file: '/logos/daaem.png',
     width: 110,
-    // teal/red logo — works well inverted on dark
+    invert: false,
+  },
+  {
+    name: 'Lhloba',
+    file: '/logos/lhloba.png',
+    width: 110,
     invert: false,
   },
   {
     name: 'Growth Strategy Experts',
-    file: '/logos/growth-strategy.png',
+    file: '/logos/logo-Growth-Strategy.png',
     width: 120,
     invert: false,
   },
   {
     name: 'Kubera Finance Group',
-    file: '/logos/kubera.png',
+    file: '/logos/kubera.svg',
     width: 130,
     invert: false,
   },
   {
     name: 'MagicSpells',
-    file: '/logos/magicspells.png',
+    file: '/logos/magicspell.png',
     width: 110,
     invert: false,
   },
@@ -33,8 +38,14 @@ const logos = [
     name: 'Diamond Freight Systems',
     file: '/logos/diamond-freight.png',
     width: 140,
-    // black logo on white — invert to white on dark
+    // black logo on white bg — invert to white for dark background
     invert: true,
+  },
+  {
+    name: 'GTB',
+    file: '/logos/gtb.png',
+    width: 110,
+    invert: false,
   },
 ]
 
