@@ -59,11 +59,9 @@ export const metadata: Metadata = {
     images: ['/opengraph-image.png'],
   },
   icons: {
-    icon: [
-      { url: '/icon.svg', type: 'image/svg+xml' },
-    ],
-    apple: '/icon.svg',
-    shortcut: '/icon.svg',
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    apple: '/favicon.svg',
+    shortcut: '/favicon.svg',
   },
   robots: {
     index: true,
