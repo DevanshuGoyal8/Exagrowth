@@ -60,29 +60,34 @@ export function Footer() {
           {/* Brand column */}
           <div className="flex flex-col gap-5">
             <Link href="/" className="flex items-center gap-2.5" aria-label="Exagrowth — home">
-              <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="rounded-[6px]">
                 <defs>
+                  <linearGradient id="fbg" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#1D4ED8"/>
+                    <stop offset="100%" stopColor="#1E40AF"/>
+                  </linearGradient>
                   <linearGradient id="fb1" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#60A5FA"/>
-                    <stop offset="100%" stopColor="#2563EB"/>
+                    <stop offset="0%" stopColor="#FFFFFF"/>
+                    <stop offset="100%" stopColor="#BFDBFE"/>
                   </linearGradient>
                   <linearGradient id="fb2" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#93C5FD"/>
-                    <stop offset="100%" stopColor="#3B82F6"/>
+                    <stop offset="0%" stopColor="#FFFFFF"/>
+                    <stop offset="100%" stopColor="#93C5FD"/>
                   </linearGradient>
                   <linearGradient id="fb3" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#BFDBFE"/>
+                    <stop offset="0%" stopColor="#DBEAFE"/>
                     <stop offset="100%" stopColor="#60A5FA"/>
                   </linearGradient>
                 </defs>
-                <rect x="5"  y="21" width="6" height="9"  rx="1.5" fill="url(#fb1)"/>
-                <rect x="15" y="14" width="6" height="16" rx="1.5" fill="url(#fb2)"/>
-                <rect x="25" y="7"  width="6" height="23" rx="1.5" fill="url(#fb3)" opacity="0.85"/>
-                <path d="M25 12 L31 6 M26 6 L31 6 L31 11" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <rect width="32" height="32" rx="7" fill="url(#fbg)"/>
+                <rect x="5"  y="20" width="5" height="6"  rx="1.2" fill="url(#fb1)"/>
+                <rect x="13" y="14" width="5" height="12" rx="1.2" fill="url(#fb2)"/>
+                <rect x="21" y="8"  width="5" height="18" rx="1.2" fill="url(#fb3)" opacity="0.85"/>
+                <line x1="6" y1="25" x2="25" y2="7" stroke="white" strokeWidth="2" strokeLinecap="round" opacity="0.9"/>
+                <polyline points="17,6 25,7 24,15" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.9"/>
               </svg>
-              <span className="flex items-baseline">
-                <span className="font-extrabold text-[16px] tracking-tight text-white">Exa</span>
-                <span className="font-light text-[16px] tracking-wide text-slate-400">growth</span>
+              <span className="font-extrabold text-[16px] tracking-tight text-white leading-none select-none">
+                Exa<span className="font-light text-slate-400" style={{ letterSpacing: '0.04em' }}>growth</span>
               </span>
             </Link>
             <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed">

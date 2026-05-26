@@ -58,6 +58,13 @@ export const metadata: Metadata = {
       'We build what AI makes possible. Custom software, AI agents, and digital growth — across 5 countries.',
     images: ['/opengraph-image.png'],
   },
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/icon.svg',
+    shortcut: '/icon.svg',
+  },
   robots: {
     index: true,
     follow: true,
