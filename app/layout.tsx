@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
@@ -121,6 +122,7 @@ export default function RootLayout({
           />
         )}
       </body>
+      <GoogleAnalytics gaId="G-CV8Q4VVGF4" />
     </html>
   )
 }
