@@ -4,16 +4,16 @@ import React from 'react'
 import Image from 'next/image'
 
 const logos = [
-  { name: "Da'aem",                  file: '/logos/daaem.png'               },
-  { name: 'Lhloba',                  file: '/logos/lhloba.png'              },
-  { name: 'Growth Strategy Experts', file: '/logos/logo-Growth-Strategy.png'},
-  { name: 'Kubera Finance Group',    file: '/logos/kubera.svg'              },
-  { name: 'MagicSpells',             file: '/logos/magicspell.png'          },
-  { name: 'Diamond Freight Systems', file: '/logos/diamond-freight.png'    },
-  { name: 'GTB',                     file: '/logos/gtb.png'                 },
+  { name: "Da'aem",                  file: '/logos/daaem.png'                },
+  { name: 'Lhloba',                  file: '/logos/lhloba.png'               },
+  { name: 'Growth Strategy Experts', file: '/logos/logo-Growth-Strategy.png' },
+  { name: 'Kubera Finance Group',    file: '/logos/kubera.svg'               },
+  { name: 'MagicSpells',             file: '/logos/magicspell.png'           },
+  { name: 'Diamond Freight Systems', file: '/logos/diamond-freight.png'      },
+  { name: 'GTB',                     file: '/logos/gtb.png'                  },
 ]
 
-// Triple the array so the 33.333% translate loops perfectly
+// Triple so the 33.333% CSS translate loops seamlessly
 const track = [...logos, ...logos, ...logos]
 
 export function ClientLogos() {
@@ -24,11 +24,11 @@ export function ClientLogos() {
     >
       {/* Fade edges */}
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 w-32 z-10"
+        className="pointer-events-none absolute inset-y-0 left-0 w-40 z-10"
         style={{ background: 'linear-gradient(to right, var(--color-background), transparent)' }}
       />
       <div
-        className="pointer-events-none absolute inset-y-0 right-0 w-32 z-10"
+        className="pointer-events-none absolute inset-y-0 right-0 w-40 z-10"
         style={{ background: 'linear-gradient(to left, var(--color-background), transparent)' }}
       />
 
@@ -39,20 +39,35 @@ export function ClientLogos() {
 
       {/* Marquee track */}
       <div className="flex overflow-hidden select-none" aria-hidden="true">
-        <div className="flex items-center gap-5 animate-marquee">
+        <div className="flex items-center gap-16 animate-marquee">
           {track.map((logo, i) => (
             <div
               key={`${logo.name}-${i}`}
-              className="shrink-0 flex items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-sm hover:border-[var(--color-blue)]/40 hover:bg-white/10 transition-all duration-300 group"
-              style={{ width: '180px', height: '80px', padding: '14px 20px' }}
+              className="shrink-0 flex items-center justify-center group"
             >
               <Image
                 src={logo.file}
                 alt={logo.name}
-                width={140}
-                height={52}
-                className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-105"
-                style={{ maxHeight: '52px' }}
+                width={120}
+                height={40}
+                className="object-contain transition-all duration-300"
+                style={{
+                  height: '36px',
+                  width: 'auto',
+                  maxWidth: '130px',
+                  /* Convert every logo to white — eliminates white boxes,
+                     color clashes, and size-perception differences */
+                  filter: 'brightness(0) invert(1)',
+                  opacity: 0.45,
+                }}
+                onMouseEnter={e => {
+                  const el = e.currentTarget as HTMLImageElement
+                  el.style.opacity = '0.9'
+                }}
+                onMouseLeave={e => {
+                  const el = e.currentTarget as HTMLImageElement
+                  el.style.opacity = '0.45'
+                }}
               />
             </div>
           ))}
