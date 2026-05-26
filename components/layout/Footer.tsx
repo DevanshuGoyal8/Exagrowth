@@ -59,35 +59,19 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
           {/* Brand column */}
           <div className="flex flex-col gap-5">
-            <Link href="/" className="flex items-center gap-2.5" aria-label="Exagrowth — home">
-              <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="rounded-[6px]">
-                <defs>
-                  <linearGradient id="fbg" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor="#1D4ED8"/>
-                    <stop offset="100%" stopColor="#1E40AF"/>
-                  </linearGradient>
-                  <linearGradient id="fb1" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#FFFFFF"/>
-                    <stop offset="100%" stopColor="#BFDBFE"/>
-                  </linearGradient>
-                  <linearGradient id="fb2" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#FFFFFF"/>
-                    <stop offset="100%" stopColor="#93C5FD"/>
-                  </linearGradient>
-                  <linearGradient id="fb3" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#DBEAFE"/>
-                    <stop offset="100%" stopColor="#60A5FA"/>
-                  </linearGradient>
-                </defs>
-                <rect width="32" height="32" rx="7" fill="url(#fbg)"/>
-                <rect x="5"  y="20" width="5" height="6"  rx="1.2" fill="url(#fb1)"/>
-                <rect x="13" y="14" width="5" height="12" rx="1.2" fill="url(#fb2)"/>
-                <rect x="21" y="8"  width="5" height="18" rx="1.2" fill="url(#fb3)" opacity="0.85"/>
-                <line x1="6" y1="25" x2="25" y2="7" stroke="white" strokeWidth="2" strokeLinecap="round" opacity="0.9"/>
-                <polyline points="17,6 25,7 24,15" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.9"/>
+            <Link href="/" className="flex items-center gap-2" aria-label="Exagrowth — home">
+              <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="shrink-0">
+                <path d="M 25 4 L 8 4 Q 4 4 4 8 L 4 24 Q 4 28 8 28 L 17 28 L 28 17"
+                  stroke="#F97316" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                <path d="M 22 12 L 28 17 L 23 23"
+                  stroke="#F97316" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                <rect x="7"  y="20" width="3" height="6"  rx="0.8" fill="#D1D5DB"/>
+                <rect x="12" y="16" width="3" height="10" rx="0.8" fill="#D1D5DB"/>
+                <rect x="17" y="12" width="3" height="14" rx="0.8" fill="#D1D5DB"/>
+                <rect x="22" y="8"  width="3" height="18" rx="0.8" fill="#D1D5DB"/>
               </svg>
-              <span className="font-extrabold text-[16px] tracking-tight text-white leading-none select-none">
-                Exa<span className="font-light text-slate-400" style={{ letterSpacing: '0.04em' }}>growth</span>
+              <span className="font-bold text-[17px] leading-none select-none text-[#F97316]">
+                Exagrowth
               </span>
             </Link>
             <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed">

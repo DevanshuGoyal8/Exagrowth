@@ -57,37 +57,19 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0 group" aria-label="Exagrowth — home">
-            {/* Icon mark — matches favicon exactly */}
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="shrink-0 rounded-[7px]">
-              <defs>
-                <linearGradient id="hbg" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#1D4ED8"/>
-                  <stop offset="100%" stopColor="#1E40AF"/>
-                </linearGradient>
-                <linearGradient id="hb1" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#FFFFFF"/>
-                  <stop offset="100%" stopColor="#BFDBFE"/>
-                </linearGradient>
-                <linearGradient id="hb2" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#FFFFFF"/>
-                  <stop offset="100%" stopColor="#93C5FD"/>
-                </linearGradient>
-                <linearGradient id="hb3" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#DBEAFE"/>
-                  <stop offset="100%" stopColor="#60A5FA"/>
-                </linearGradient>
-              </defs>
-              <rect width="32" height="32" rx="7" fill="url(#hbg)"/>
-              <rect x="5"  y="20" width="5" height="6"  rx="1.2" fill="url(#hb1)"/>
-              <rect x="13" y="14" width="5" height="12" rx="1.2" fill="url(#hb2)"/>
-              <rect x="21" y="8"  width="5" height="18" rx="1.2" fill="url(#hb3)" opacity="0.85"/>
-              <line x1="6" y1="25" x2="25" y2="7" stroke="white" strokeWidth="2" strokeLinecap="round" opacity="0.9"/>
-              <polyline points="17,6 25,7 24,15" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.9"/>
+          <Link href="/" className="flex items-center gap-2 shrink-0" aria-label="Exagrowth — home">
+            {/* Icon mark — exact recreation of brand logo */}
+            <svg width="36" height="36" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="shrink-0">
+              <path d="M 25 4 L 8 4 Q 4 4 4 8 L 4 24 Q 4 28 8 28 L 17 28 L 28 17" stroke="#F97316" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <path d="M 22 12 L 28 17 L 23 23" stroke="#F97316" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <rect x="7"  y="20" width="3" height="6"  rx="0.8" fill="#1C1C1C"/>
+              <rect x="12" y="16" width="3" height="10" rx="0.8" fill="#1C1C1C"/>
+              <rect x="17" y="12" width="3" height="14" rx="0.8" fill="#1C1C1C"/>
+              <rect x="22" y="8"  width="3" height="18" rx="0.8" fill="#1C1C1C"/>
             </svg>
-            {/* Wordmark — single parent prevents inter-span gap */}
-            <span className="font-extrabold text-[17px] tracking-tight text-white leading-none select-none">
-              Exa<span className="font-light text-slate-400" style={{ letterSpacing: '0.04em' }}>growth</span>
+            {/* Wordmark */}
+            <span className="font-bold text-[18px] leading-none select-none text-[#F97316]">
+              Exagrowth
             </span>
           </Link>
 
