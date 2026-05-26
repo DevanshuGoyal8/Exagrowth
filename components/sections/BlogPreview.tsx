@@ -6,33 +6,10 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { Badge } from '@/components/ui/Badge'
 import { BlogCover } from '@/components/ui/BlogCover'
+import { posts } from '@/lib/blogData'
 
-const blogPosts = [
-  {
-    slug: 'ai-workflow-automation-guide',
-    tag: 'AI Automation',
-    title: 'How to Automate 80% of Your Business Workflows with AI Agents',
-    excerpt:
-      'Most businesses have 5–10 workflows that eat hours every week. Here is a practical guide to identifying them and building AI agents that handle them autonomously.',
-    date: '2025-04-28',
-  },
-  {
-    slug: 'llm-integration-production',
-    tag: 'LLM Integration',
-    title: 'Integrating LLMs Into Your Product: A Production Checklist',
-    excerpt:
-      'Going from a demo to production LLM integration is harder than it looks. Rate limits, prompt injection, latency budgets — here is what to think about before you ship.',
-    date: '2025-04-14',
-  },
-  {
-    slug: 'cybersecurity-2025-trends',
-    tag: 'Cybersecurity',
-    title: '2025 Cybersecurity Threats Every SaaS Founder Should Know',
-    excerpt:
-      'AI-generated phishing, supply chain attacks, and zero-day exploits are evolving fast. Here is the threat landscape and what your team should be doing about it.',
-    date: '2025-03-31',
-  },
-]
+// Always derived from the single source of truth so slugs never go stale
+const blogPosts = posts.slice(0, 3)
 
 const cardVariants = {
   hidden: { opacity: 0, y: 24 },

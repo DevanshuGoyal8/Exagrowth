@@ -240,7 +240,7 @@ export function ProductsPageClient() {
         </div>
       </motion.section>
 
-      {/* ExaFit.ai */}
+      {/* ExaFit.pro */}
       <motion.section
         initial={prefersReduced ? false : { opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -265,7 +265,7 @@ export function ProductsPageClient() {
                     id="exafit-heading"
                     className="text-4xl md:text-5xl font-bold gradient-text"
                   >
-                    ExaFit.ai
+                    ExaFit.pro
                   </h2>
                   <Badge variant="warning">COMING SOON</Badge>
                 </div>
@@ -274,7 +274,7 @@ export function ProductsPageClient() {
                   Your AI-powered fitness companion.
                 </p>
                 <p className="text-[var(--color-text-secondary)] leading-relaxed mb-8">
-                  ExaFit.ai combines AI meal planning, photo-based calorie tracking, and deep
+                  ExaFit.pro combines AI meal planning, photo-based calorie tracking, and deep
                   integrations with your favourite fitness devices. Snap a photo of your plate,
                   log your workout, and let AI tell you exactly what to do next to hit your goals.
                 </p>
@@ -299,7 +299,7 @@ export function ProductsPageClient() {
                     Join the Waitlist
                   </h3>
                   <p className="text-sm text-[var(--color-text-muted)] mb-6">
-                    Be first to know when ExaFit.ai launches.
+                    Be first to know when ExaFit.pro launches.
                   </p>
 
                   <AnimatePresence mode="wait">

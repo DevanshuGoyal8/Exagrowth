@@ -4,13 +4,13 @@ import React from 'react'
 import Image from 'next/image'
 
 const logos = [
-  { name: "Da'aem",                 file: '/logos/daaem.png',               scale: 1.0 },
-  { name: 'Lhloba',                 file: '/logos/lhloba.png',              scale: 1.1 },
-  { name: 'Growth Strategy Experts',file: '/logos/logo-Growth-Strategy.png',scale: 1.0 },
-  { name: 'Kubera Finance Group',   file: '/logos/kubera.svg',              scale: 1.1 },
-  { name: 'MagicSpells',            file: '/logos/magicspell.png',          scale: 1.0 },
-  { name: 'Diamond Freight Systems',file: '/logos/diamond-freight.png',     scale: 1.0 },
-  { name: 'GTB',                    file: '/logos/gtb.png',                 scale: 1.0 },
+  { name: "Da'aem",                  file: '/logos/daaem.png'               },
+  { name: 'Lhloba',                  file: '/logos/lhloba.png'              },
+  { name: 'Growth Strategy Experts', file: '/logos/logo-Growth-Strategy.png'},
+  { name: 'Kubera Finance Group',    file: '/logos/kubera.svg'              },
+  { name: 'MagicSpells',             file: '/logos/magicspell.png'          },
+  { name: 'Diamond Freight Systems', file: '/logos/diamond-freight.png'    },
+  { name: 'GTB',                     file: '/logos/gtb.png'                 },
 ]
 
 // Triple the array so the 33.333% translate loops perfectly
@@ -39,24 +39,20 @@ export function ClientLogos() {
 
       {/* Marquee track */}
       <div className="flex overflow-hidden select-none" aria-hidden="true">
-        <div className="flex items-center gap-6 animate-marquee">
+        <div className="flex items-center gap-5 animate-marquee">
           {track.map((logo, i) => (
             <div
               key={`${logo.name}-${i}`}
-              className="shrink-0 flex items-center justify-center px-6 py-3 rounded-xl border border-white/8 bg-white/4 backdrop-blur-sm hover:border-white/16 hover:bg-white/8 transition-all duration-300 group"
-              style={{ minWidth: '160px', height: '72px' }}
+              className="shrink-0 flex items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-sm hover:border-[var(--color-blue)]/40 hover:bg-white/10 transition-all duration-300 group"
+              style={{ width: '180px', height: '80px', padding: '14px 20px' }}
             >
               <Image
                 src={logo.file}
                 alt={logo.name}
                 width={140}
-                height={48}
-                className="object-contain transition-all duration-300 group-hover:scale-105"
-                style={{
-                  maxHeight: `${Math.round(44 * logo.scale)}px`,
-                  width: 'auto',
-                  maxWidth: '140px',
-                }}
+                height={52}
+                className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-105"
+                style={{ maxHeight: '52px' }}
               />
             </div>
           ))}

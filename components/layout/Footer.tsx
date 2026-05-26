@@ -12,7 +12,7 @@ const serviceLinks = [
 
 const productLinks = [
   { label: 'ExaStore.ai', href: 'https://exastore.ai', external: true },
-  { label: 'ExaFit.ai', href: '/products#exafit', external: false },
+  { label: 'ExaFit.pro', href: '/products#exafit', external: false },
 ]
 
 const companyLinks = [
