@@ -62,10 +62,10 @@ export function Header() {
             <svg width="36" height="36" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="shrink-0">
               <path d="M 25 4 L 8 4 Q 4 4 4 8 L 4 24 Q 4 28 8 28 L 17 28 L 28 17" stroke="#F97316" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
               <path d="M 22 12 L 28 17 L 23 23" stroke="#F97316" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-              <rect x="7"  y="20" width="3" height="6"  rx="0.8" fill="#1C1C1C"/>
-              <rect x="12" y="16" width="3" height="10" rx="0.8" fill="#1C1C1C"/>
-              <rect x="17" y="12" width="3" height="14" rx="0.8" fill="#1C1C1C"/>
-              <rect x="22" y="8"  width="3" height="18" rx="0.8" fill="#1C1C1C"/>
+              <rect x="7"  y="20" width="3" height="6"  rx="0.8" fill="#FFFFFF" fillOpacity="0.9"/>
+              <rect x="12" y="16" width="3" height="10" rx="0.8" fill="#FFFFFF" fillOpacity="0.9"/>
+              <rect x="17" y="12" width="3" height="14" rx="0.8" fill="#FFFFFF" fillOpacity="0.9"/>
+              <rect x="22" y="8"  width="3" height="18" rx="0.8" fill="#FFFFFF" fillOpacity="0.9"/>
             </svg>
             {/* Wordmark */}
             <span className="font-bold text-[18px] leading-none select-none text-[#F97316]">
